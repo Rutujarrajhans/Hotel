@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+    <title>REGISTER</title>
+    <style>
+.content{
+    width:800px;
+    background-color: rgb(0,0,0,0.6);
+    margin:auto;
+    color: #ffffff;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+    margin-left:300px;
+}
+.vow{
+  width:1520px;
+  height:80px;
+background-color: gray;
+
+}
+.vow a{
+  float: right;
+  
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 22px;
+  padding-bottom: 25px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.vow a:hover {
+  background-color: #000;
+}
+.active {
+  background-color: #fcba03;
+}
+.firstname{
+    position: relative
+    ;
+    color: black;
+    left: 0px;
+    top:-37px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+.lastname{
+    position: relative;
+    left: 200px;
+    top:-80px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color:black;
+   
+}
+.firstlabel{
+    position: relative;
+    color: black;
+    text-transform:capitalize;
+    font-size: 20px;
+    left:115px;
+    top:-45px;
+}
+.lastlabel{
+    position: relative;
+    color:black;
+    text-transform:capitalize;
+    font-size: 20px;
+    left:285px;
+    top:-76px;
+}
+.address{
+    position: relative;
+    left:200px;
+    top:-37px;
+    line-height: 40px;
+    width:300px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color:#555;
+}
+.email{
+    position: relative;
+    left:200px;
+    cursor: pointer;
+    top:-37px;
+    line-height: 40px;
+    width:300px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color:#555;
+}
+.phone-number{
+    position: relative;
+    color:black;
+    text-transform:capitalize;
+    font-size: 16px;
+    left:auto;
+    top:-2px; 
+}
+.bid{
+    position: relative;
+    left:200px;
+    top:-37px;
+    line-height: 40px;
+    width:300px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color:#555;
+}
+.name{
+    margin-left: 25px;
+    margin-top: 30px;
+width: 125px;
+color:white;
+font-size: 18px;
+font-weight: 700;
+font-family: 'lobster',cursive;}
+body{
+  background-image: url("https://www.ncirl.ie/portals/0/Images/650x366-Cards-Teasers-Inners/img-student-laptop-fund.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="vow" >
+    <a href="{% url "well" %} "><i class="fa fa-fw fa-file"></i>Register</a>
+    <a href="{% url "login" %} "><i class="fa fa-fw fa-sign-in"></i> Login
+  </a> 
+    <a href="{% url "msg" %} "><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+     
+    <a href="{% url "about" %} "><i class="fa fa-fw fa-file"></i>About Us</a>
+    <a class="active" href="{% url "index" %} "><i class="fa fa-fw fa-home"></i> Home</a>
+  </nav>
+{% load crispy_forms_tags %}
+{% block start %}
+
+<div class="content">
+  <form method="POST" action="/well/"  style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      {{ form|crispy}}
+    </fieldset>
+  
+    <center>
+      <button style="background: black; padding:2%; font-size: 2rem; color:white;" class="btn " type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; sign up</button>
+    </center>
+    <br />
+    <sub><a href="{% url "login" %}" style="text-decoration: none; color: blue; padding:3%; cursor:pointer;">Already have an account ?</a></sub>
+  </form>
+</div>
+{% endblock start %}
+</body>
+</html>

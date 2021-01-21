@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <style>
+     body{
+         background-image:url("https://ak.picdn.net/shutterstock/videos/25457081/thumb/1.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+     }   
+h1{
+  color: orange;
+  margin-top:10px;
+}
+.box{
+  width:900px;
+  height:400px;
+  padding-left: 25%;
+  top:200px;
+  margin-top:50px ;
+  left:200px;
+  opacity: 0.8;
+ 
+}
+.box .text{
+  width: 350px;
+  height: 350px;
+  font-size: 30px;
+  color: white;
+  background-color: black;
+  float: left;
+  display: block;
+  padding-left: 20px;
+  color: orange;
+  font-weight: lighter;
+  text-shadow: 0.5px 0.5px #fdfefe;
+  border-radius: 15px 0px 0px 15px;
+  border:2px solid orange;
+}
+.box .img{
+  width: 500px;
+  height: 350px;
+  background-image: url("https://sifu.unileversolutions.com/image/en-AU/recipe-topvisual/2/1260-709/beef-burger-with-deep-fried-bacon-and-thousand-island-dressing-50486939.jpg");
+  background-size: cover;
+  background-position: left center;
+  float: left;
+  border-radius: 0px 15px 15px 0px;
+  border:2px solid orange;
+  border-left: none;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+
+}
+.food{
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 3px 3px black;
+}
+.btn{
+    border:4px solid black;
+ font-family: 'lobster',cursive;
+ cursor: pointer;
+ font-size:25px;
+  padding:10px;
+font-weight: 50px;
+background-color: orange;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+.vow{
+  width:1520px;
+  height:80px;
+background-color: rgb(247, 148, 19);
+
+}
+.vow a{
+  float: right;
+  
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 22px;
+  padding-bottom: 25px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.vow a:hover {
+  background-color: #000;
+}
+.active {
+  background-color: #fcba03;
+}
+    </style>
+</head>
+<body>
+    <nav class="vow" >
+    <a href="{% url "logout"  %} "><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+    <a href="{% url "menu" %}"><i class="fa fa-fw fa-th-list"></i> Menu</a>
+    <a href="{% url "book" %}"> <i class="fa fa-fw fa-cart-plus" aria-hidden="true"></i>Online-Order</a>
+</nav>
+    <div class="food">
+        <h1 class= "h1">Food Menu</h1>
+        <button type="button" class="btn" onclick="searchfunction()">NEXT</button>
+      <div class="box">
+        <div class="text">
+          <h2 class="title">Beef Burger</h2>
+        <p>
+            <span class="main">Burger</span><br/>
+          <span class="main1">1 French Fries </span><br/>
+          <span class="main2">1 Pepsi </span><br/>
+          <span class="main3">1 Ice cream </span><br/>
+          
+          
+          <p class="price">100/-</p>
+       
+        </p>  
+      
+        </div>
+        <div class="img">
+      
+        </div>
+        <div class="img1">
+      
+        </div>
+        
+      
+      </div>
+      </div>
+      {% csrf_token %}
+     <script type="text/javascript">
+         var searchfunction;
+         var $ =jQuery;
+         $( document ).ready(function() {
+        searchfunction=function (){
+        var click=1;
+       
+        
+        $('.btn').click( function(){
+          var   images=["url('https://img.favpng.com/5/18/23/barbecue-ribs-asado-grilling-beefsteak-png-favpng-gmVKtMTmg5LVhhDYM4krvjXFC.jpg')","url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZWO83Aqv0CO95szJKfU88FsSy_zeG1D1JkQ&usqp=CAU')","url('https://media-cdn.tripadvisor.com/media/photo-s/18/3a/09/6c/bonefish-seafood-platter.jpg')","url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5NMgs26sG02YVas3PNvD6QAys1oopGTC-w&usqp=CAU')"],
+            title=["Beef Burger","Beef Grills","Seafood","Snacks"],
+            main_course=["1 burger200 gm","grills 250 gm","2 fish 200 gm","Noodles"],
+            main1=["1 medium fries","1 salad","1 medium fries","munchurian"],
+            main2=["1 pepsi","1 coconut lemon","sweet tea","pasta"],
+
+            main3=["1 salad","1 fish","1 crab","1 coco-cola"],
+            price=["100/-","152/-","200/-","289\-"];
+             if(click > images.length*1  ){
+                 click=0;
+             }
+             $('.img').css('background-image',images[click]);
+             $('.title').html(title[click]);
+             $('.main').html(main_course[click]);
+             $('.main1').html(main1[click]);
+             $('.main2').html(main2[click]);
+             $('.main3').html(main3[click]);
+             $('.price').html(price[click]);
+
+            click =click+1;
+            click1 =click1+1;
+        });
+          } });
+    
+     </script>  
+</body>
+</html>

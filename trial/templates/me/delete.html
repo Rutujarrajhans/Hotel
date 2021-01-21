@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+  {% load static %}
+  
+      <title> {% block title %}
+      {% endblock title %}
+      </title>
+  
+      <!--Cdn links for bootstrap-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'bootstrap\bootstrap.css' %}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+   
+     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+ {% block css %}
+<style>
+    body{
+        background-image: url("https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8d2hpdGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .progress {
+        width: 150px;
+        height: 150px;
+        background: none;
+        position: relative;
+    }
+    
+    .progress::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 6px solid #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .progress>span {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    
+    .progress .progress-left {
+        left: 0;
+    }
+    
+    .progress .progress-bar {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-width: 6px;
+        border-style: solid;
+        position: absolute;
+        top: 0;
+    }
+    
+    .progress .progress-left .progress-bar {
+        left: 100%;
+        border-top-right-radius: 80px;
+        border-bottom-right-radius: 80px;
+        border-left: 0;
+        -webkit-transform-origin: center left;
+        transform-origin: center left;
+    }
+    
+    .progress .progress-right {
+        right: 0;
+    }
+    
+    .progress .progress-right .progress-bar {
+        left: -100%;
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: 80px;
+        border-right: 0;
+        -webkit-transform-origin: center right;
+        transform-origin: center right;
+    }
+    
+    .progress .progress-value {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    /*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+    
+    body {
+        min-height: 100vh;
+    }
+    
+    .rounded-lg {
+        border-radius: 1rem;
+    }
+    
+    .text-gray {
+        color: #aaa;
+    }
+    
+    div.h4 {
+        line-height: 1rem;
+    }
+</style>
+</head>
+{% endblock css %} {% block body %}
+<!--Staff section -->
+
+<!--Room Stats section starts here-->
+
+
+<section class="my-5 ">
+    {%load app_tags%}
+    
+
+
+
+            
+                    <!-- Progress bar 1 -->
+{% block content %}
+
+                    
+                        
+                    <!-- END -->
+
+                    
+                    
+                   
+<h2 style="text-align: center;">ARE YOU SURE?</h2>
+     <h2 style="text-align: center;">{{roomnumber}}</h2>
+     <form method="POST" action="/delete/">
+        {%csrf_token%}
+                        <input style="text-align: center; margin-left: 480px;margin-top: 80px;border:5px solid black" type="text" name="rd">
+                        <a style="text-align: center;margin-top: 40px;" href="{% url 'index' %}"><h3>Cancel</h3></a>
+                        
+            <a style="text-align: center;margin-left: 880px;margin-top: -50px; " href="delete/?roomnumber={{roomnumber}}"><Button class="btn btn-primary">Submit</Button></a>
+           
+        </td>
+
+
+    </tr>
+</form>
+{% endblock %}
+{% endblock body %}
+
+</table>
+<!---->
+</section>
+</form>
+
+<!--Modal for Add New Location starts from here-->
+
+<!-- The Modal -->
+
+   
+</body>
+</html>

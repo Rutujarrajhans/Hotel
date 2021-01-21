@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    form{
+    
+        padding: 10px;
+    }
+    #name{
+        width: 100%;
+        height: 100px;
+    }
+    .name{
+        margin-left: 25px;
+        margin-top: 30px;
+    width: 125px;
+    color:black;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'lobster',cursive;}
+    .firstname{
+        position: relative
+        ;
+        color: black;
+        left: 70px;
+        top:-37px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+    }
+    .lastname{
+        position: relative;
+        left: 311px;
+        top:-80px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:black;
+       
+    }
+    .firstlabel{
+        position: relative;
+        color: black;
+        text-transform:capitalize;
+        font-size: 20px;
+        left:115px;
+        top:-45px;
+    }
+    .lastlabel{
+        position: relative;
+        color:black;
+        text-transform:capitalize;
+        font-size: 20px;
+        left:285px;
+        top:-76px;
+    }
+    .company{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .email{
+        position: relative;
+        left:200px;
+        cursor: pointer;
+        top:-37px;
+        line-height: 40px;
+        width:480px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .code{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:95px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .number{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:255px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .area-code{
+        position: relative;
+        color: black;
+        text-transform:capitalize;
+        font-size: 16px;
+        left:102px;
+        top:-4px; 
+    }
+    .phone-number{
+        position: relative;
+        color:black;
+        text-transform:capitalize;
+        font-size: 16px;
+        left:auto;
+        top:-2px; 
+    }
+    .option{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:532px;
+        height:40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+        outline:none;
+        overflow: hidden;
+    }
+    .option option{
+        font-size: 20px;
+    }
+    #student{
+        margin-left:-630px;
+        color:black;
+        font-size:18px;
+        font-family: 'lobster',cursive;
+    }
+    .radio{
+        display: inline-block;
+        margin-top: 15px;
+        margin-left: 25px;
+        padding-right: 70px;
+        font-size: 25px;
+        color: black;
+    }
+    .radio input{
+        width: 20px;
+        height: 20px;
+        border-radius:50% ;
+        cursor: pointer;
+        outline: none;
+    }
+    .button{
+        background-color: #3BAF9F;
+        display: block;
+        margin:20px 0px;
+        text-align: center;
+        text-shadow: #555;
+        -moz-text-size-adjust: 25px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-radius:12px ;
+        border: 2px solid #366473;
+        padding: 14px 110px;
+        margin-left:234px;
+       
+        color: white;
+        cursor: pointer;
+    
+        transition: 0.25px;
+        outline: none;
+    }
+    .button:hover{
+        background: #5390F5;
+    }
+    .bid{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:100px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .start{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:200px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .end{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:200px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color:#555;
+    }
+    .file{
+        position: relative;
+        left:200px;
+        top:-37px;
+        line-height: 40px;
+        width:200px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+    }
+    .vow{
+  width:1520px;
+  height:80px;
+background-color: rgb(247, 148, 19);
+
+}
+.vow a{
+  float: right;
+  
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 22px;
+  padding-bottom: 25px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.vow a:hover {
+  background-color: #000;
+}
+.active {
+  background-color: #fcba03;
+}
+            </style>
+          
+    
+           
+</head>
+<body>
+    <nav class="vow" >
+        <a href="{% url "logout"  %} "><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+        <a href="{% url "menu" %}"><i class="fa fa-fw fa-th-list"></i> Menu</a>
+        <a href="{% url "book" %}"> Online-Order</a>
+    </nav>
+    <form  method="POST" action="/hotel/">
+        {% csrf_token %}
+    <h2 class="name">Name</h2>
+                <input class="firstname" type="text" name="first_name"><br>
+                <label class="firstlabel">FirstName</label>
+                <input class="lastname" type="text" name="last_name"><br>
+                <label class="lastlabel">Lastname</label>
+                <h2 class="name">ADDRESS</h2>
+                <input class="company" type="text" name="company">
+                <h2 class="name">EMAIL ID</h2> 
+                <input class="email" type="email" name="email">
+                <h2 class="name">Purpose</h2> 
+                <input class="email" type="text" name="Purpose">
+                <h2 class="name">NO_of_Seats</h2>
+                <input class="company" type="number" name="menu">
+                <h2 class="name">Time</h2>
+                <input class="bid" type="text" name="bid">
+                <h2 class="name">Date</h2>
+                <input class="start" type="date" name="start">
+               
+                <h2 class="name">CONTACT</h2> 
+                <input class="code" type="text" name="area_code">
+<label class="area-code">Area Code</label>
+<input class="number" type="text" name="phone">
+<label class="phone-number">CONTACT NUMBER</label>
+<h2 class="name">Seat Type</h2>
+<select class="option" name="subject">
+    <option disabled="disabled" selected="selected">--Choose Option</option>
+    <option>VIP</option>
+    <option>Luxurious</option>
+    <option>normal</option>
+</select>    
+<h2 class="name">Facility</h2>
+<select class="option" name="Facility">
+    <option disabled="disabled" selected="selected">--Choose Option</option>
+    <option>AC</option>
+    <option>NON-AC</option>
+    
+</select>    
+<h2 id="student" name="gender">GENDER</h2>   
+<label class="radio">
+       <input class="radio-one" type="radio" checked="checked" name="">
+           <span class="checkmark"></span>
+FEMALE
+       </label>
+       <label class="radio">
+        <input class="radio-two" type="radio"  name="">
+            <span class="checkmark"></span>
+MALE
+        </label>
+        <label class="radio">
+            <input class="radio-one" type="radio" name="">
+                <span class="checkmark"></span>
+   OTHER
+            </label>
+           
+        <button class="button" type="submit"><b>REGISTER</b></button>
+   
+              
+        </form>
+</body>
+</html>

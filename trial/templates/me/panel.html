@@ -1,0 +1,428 @@
+
+  {% load static %}
+  <!DOCTYPE html>
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> {% block title %}
+      {% endblock title %}
+      </title>
+  
+      <!--Cdn links for bootstrap-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'bootstrap\bootstrap.css' %}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ {% block css %}
+<style>
+    
+    .navbar {
+    
+   
+    background-color:gray;
+    overflow: auto;
+    height: 54px;
+   
+  }
+  
+  .navbar a {
+    float: right;
+    
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 25px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-left: 71px   ;
+  }
+  
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  .active {
+    background-color: gray;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      padding-top: 15px;
+    }
+    .progress {
+        width: 150px;
+        height: 150px;
+        background: none;
+        position: relative;
+    }
+    
+    .progress::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 6px solid #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .progress>span {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    
+    .progress .progress-left {
+        left: 0;
+    }
+    
+    .progress .progress-bar {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-width: 6px;
+        border-style: solid;
+        position: absolute;
+        top: 0;
+    }
+    
+    .progress .progress-left .progress-bar {
+        left: 100%;
+        border-top-right-radius: 80px;
+        border-bottom-right-radius: 80px;
+        border-left: 0;
+        -webkit-transform-origin: center left;
+        transform-origin: center left;
+    }
+    
+    .progress .progress-right {
+        right: 0;
+    }
+    
+    .progress .progress-right .progress-bar {
+        left: -100%;
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: 80px;
+        border-right: 0;
+        -webkit-transform-origin: center right;
+        transform-origin: center right;
+    }
+    
+    .progress .progress-value {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    /*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+    
+    body {
+        min-height: 100vh;
+    }
+    
+    .rounded-lg {
+        border-radius: 1rem;
+    }
+    
+    .text-gray {
+        color: #aaa;
+    }
+    
+    div.h4 {
+        line-height: 1rem;
+    }
+  }
+  
+</style>
+</head>
+<body>
+    <header>
+<nav class="navbar">
+    
+<a href="{% url "logout"  %} "><i class="fa fa-fw  fa-sign-out " aria-hidden="true"></i> Logout</a>
+<a href="{% url "menu" %}"><i class="fa fa-fw fa-th-list"></i> Menu</a>
+<a href="{% url "book" %}"><i class="fa fa-fw fa-cart-plus" aria-hidden="true"></i> Online-Order</a>
+</nav>
+</header>
+{% endblock css %} {% block body %}
+<!--Staff section -->
+
+<!--Room Stats section starts here-->
+
+
+<section  class="my-5 ">
+    {%load app_tags%}
+    <a  style="margin-left: auto; " class="ui"  href="{%url "getu"  %}" > <h2 class="text-center text-primary">Status of Rooms </h2> </a>
+    
+    <div class="container-fluid px-5 py-5 border">
+        <div class="">
+
+
+
+            
+                    <!-- Progress bar 1 -->
+{% block content %}
+
+ 
+
+<div style="margin-left:100px;" class="col-xl-3 col-lg-6 col-sm-12 mb-4 ">
+    <div class="bg-white rounded-lg p-5 shadow">
+       
+        <h2 class="h6 font-weight-bold text-center mb-4">available rooms are :{{available}}</h2>
+      
+
+
+        <!-- Progress bar 1 -->
+
+        <div style="width: 100%;">
+            <div style="width: 100%;"bg-white rounded-lg p-5 shadow">
+                <h2 style="width: 100%;" class="h6 font-weight-bold text-center mb-4">Available</h2>
+
+                <!-- Progress bar 3 -->
+              
+                   
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">{{available}}</div>
+                    </div>
+                </div>
+                <!-- END -->
+
+
+            </div>
+        </div>
+
+        <div style="margin-left:800px; margin-top:-238px;width: 100%;height: 100%;">
+            <div class="bg-white rounded-lg p-5 shadow">
+               
+                
+                <h2 class="h6 font-weight-bold text-center mb-4">unavailable rooms are : {{unavailable}}</h2>
+        
+        
+        
+                <!-- Progress bar 1 -->
+        
+                <div style="width: 100%;" >
+                    <div style="width: 100%;"bg-white rounded-lg p-5 shadow">
+                        <h2 style="width: 100%;" class="h6 font-weight-bold text-center mb-4">Unavailable</h2>
+        
+                        <!-- Progress bar 3 -->
+                      
+                           
+                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">{{unavailable}}</div>
+                            </div>
+                        </div>
+                        <!-- END -->
+        
+        
+                    </div>
+                </div>
+            {% endblock content %}
+        </div>
+    </div>
+</section>
+<!--Room Stats section ends here-->
+
+
+<h2 class="text-center pb-2">Rooms Reservation Details</h2>
+
+<Button class="btn-group btn-primary" data-toggle="modal" data-target="#newroom">Add New Room</Button>
+
+
+
+
+<table class="table table-striped  ">
+    <thead>
+        <th>Room Number</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>Capacity</th>
+        <th>Size</th>
+        <th colspan="2">Actions</th>
+
+    </thead>
+     {% for living in object_list %}
+    <tr>
+        <td>{{living.roomnumber}}</td>
+        <td>{{living.get_room_type_display}}</td>
+        <td>{{living.get_status_display}}</td>
+        <td>{{living.price}}</td>
+        <td>{{living.capacity}}</td>
+        <td>{{living.size}}</td>
+        <td colspan="2">
+            <a href="me/editroom?id={{living.id}}"><Button class="btn btn-danger">Edit</Button></a>
+            <a href="me/delete?id={{living.id}}"><Button class="btn btn-primary">Cancel</Button></a>
+        </td>
+
+
+    </tr>
+    {% endfor %} 
+
+
+</table>
+<!---->
+
+<!--Modal for Add New Location starts from here-->
+
+<!-- The Modal -->
+<div class="modal" id="newlocation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+           
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col mx-auto">
+
+                          
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!--Modal for Add New location Ends here-->
+
+<!--Modal for Add New Room starts from here-->
+
+<!-- The Modal -->
+<div class="modal" id="newroom">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Room</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col mx-auto">
+
+                            <form action="/add_new_room/" method="POST">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="email">Room Type:</label>
+                                    <select class="form-control" name="roomtype" id="roomtype">
+                                        
+                                        <option value="1">Premium</option>
+                                        <option value="2">Deluxe</option>
+                                        <option value="3">Basic</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Capacity:</label>
+                                    <input type="number" class="form-control " id="capacity" name="capacity">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Price:</label>
+                                    <input type="mumber" class="form-control " id="price" name="price">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Size:</label>
+                                    <input type="number" class="form-control " id="size" name="size">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Status:</label>
+                                    <select class="form-control" name="status" id="roomstatus">
+                                        
+                                        <option value="1">Available</option>
+                                        <option value="2">Not Available</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Location:</label>
+
+                                    <select class="form-control" name="hotel" id="hotel">
+                                        {% for each_location,eachid in location%}
+                                        <option value={{eachid}}>{{each_location}}</option>
+                                        {% endfor %}
+                                        
+                                        
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Room</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!--Modal for Add New Room Ends here-->
+
+{% endblock body %} {% block js %}
+<!-- jquery for rooms stats  starts here-->
+<script>
+    $(function() {
+
+        $(".progress").each(function() {
+
+            var value = $(this).attr('data-value');
+            var left = $(this).find('.progress-left .progress-bar');
+            var right = $(this).find('.progress-right .progress-bar');
+
+            if (value > 0) {
+                if (value <= 50) {
+                    right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+                } else {
+                    right.css('transform', 'rotate(180deg)')
+                    left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+                }
+            }
+
+        })
+
+        function percentageToDegrees(percentage) {
+
+            return percentage / 100 * 360
+
+        }
+
+    });
+</script>
+<!--Jquery for room stats ends here-->
+{% endblock js %}
+
+</body>
+ </html>
+ 
